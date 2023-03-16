@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F5F1EA;
+}
+
+header{
+    background-color: #EFC36A;
+    font-size: 25px;
+    font-family: 'Boogaloo', cursive;
+    text-align: center;
+}
+
+
+section{
+    text-align: center;
+    padding: 50px 50px;
+    margin-top: 80px;
+    box-shadow: 1px 1px 18px;
+}
+
+h2{
+    padding: 30px;
+}
