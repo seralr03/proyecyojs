@@ -10,10 +10,55 @@ const productos = [{codigo: 1, nombre: "Lemon Pie", imagen: "/img/lemon-pie.jpg"
                    {codigo: 8, nombre: "Yendo", imagen: "/img/yendo.jpg", precio: 780}]
 
 
-const mensajeInicial = "Selecciona el producto que quieres por su código."
+const mensajeInicial = "Selecciona el producto que deseas por su código."
 
 
 function buscarProducto(codigo) {
     let resultado = productos.find((producto) => producto.codigo === parseInt(codigo))
     return resultado
+}
+
+function verCarrito(){
+    console.table(carrito)
+}
+
+function finalizarCompra() {
+    if (carrito.length > 0){
+        const shopping = new Compra(carrito)
+        alert(`El costo de su compra es de $ ${shopping.obtenerSubtotal()}`)
+        let respuesta = confirm("¿Desea realizar el pago?")
+            if (respuesta) {
+                alert(shopping.confirmarCompra())
+                carrito.length = 0
+            }
+    } else {
+        console.warn("No hay productos en el carrito.")
+
+    }
+}
+
+
+function comprar() {
+    let codigo = parseInt(prompt (mensajeInicial))
+        if (codigo === undefined) {
+            alert("⛔El código que ingresaste no es correcto.")
+            let respuesta = confirm("¿Deseas intentar nuevamente?")
+            if (respuesta) {
+                comprar()
+            }
+        } else {
+            let productoElegido = buscarProducto(codigo)
+                 if (productoElegido !== undefined) {
+                 alert(`${productoElegido.imagen} El producto ${productoElegido.nombre} fue agregado al carrito.`)
+                 carrito.push(productoElegido)
+                 let respuesta = confirm("¿Deseas comprar otro producto?")
+                 if (respuesta) {
+                    comprar()                
+                 }else{
+                    finalizarCompra()
+                 }
+
+             }
+        }
+    
 }
