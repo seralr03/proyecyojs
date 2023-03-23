@@ -1,60 +1,19 @@
-// let valorfijo = 50.35
-// let tipoInmueble = 0
-// let M2 = 0
-// let alarma = false
-// let factorAlarma = 1
+const carrito = []
 
-// let mensajeCotizador = "¿Qué tipo de inmueble deseas cotizar? \n" +
-//                         "1)Casa \n" +
-//                         "2)Apartamento \n" +
-//                         "3)Local comercial \n " +
-//                         "4)Chacra o Casa-Campo \n" +
-//                         "\n" +
-//                         "Ingrese el numero de su interés."
+const productos = [{codigo: 1, nombre: "Lemon Pie", imagen: "/img/lemon-pie.jpg", precio: 1800},
+                   {codigo: 2, nombre: "Pan de Nuéz", imagen: "/img/pan-de-nuez.jpg", precio: 1000},
+                   {codigo: 3, nombre: "Pasta Frola", imagen: "/img/pasta-frola.jpg", precio: 890},
+                   {codigo: 4, nombre: "Risotto", imagen:"/img/risotto.jpg", precio: 1200},
+                   {codigo: 5, nombre: "Tarta de Cebolla", imagen:"/img/tarta-de-cebolla.jpg", precio: 1400},
+                   {codigo: 6, nombre: "Si a Todo", imagen:"/img/si-a-todo.jpg", precio: 1100},
+                   {codigo: 7, nombre: "Tamos Ready", imagen: "/img/tamos-ready.jpg", precio: 850},
+                   {codigo: 8, nombre: "Yendo", imagen: "/img/yendo.jpg", precio: 780}]
 
 
-// function iniciarCotizacion() {
-//     tipoInmueble = parseInt(prompt(mensajeCotizador))
+const mensajeInicial = "Selecciona el producto que quieres por su código."
 
-//     if (tipoInmueble === NaN) {
-//         alert("Ingrese un dato válido.")
-//     } else {
-//         alarma = confirm("¿El inmueble tiene alarma?")
-//         if (alarma === false) {
-//             factorAlarma = 1.50
-//         }
 
-//         M2 = parseInt (prompt("Ingrese los M2 de se hogar"))
-//         if (M2 !== NaN) {
-//             let cotizacion = 0
-//             switch(tipoInmueble) {
-//                 case 1:
-//                     valorfijo = 50.35
-//                     cotizacion = M2 * valorfijo * factorAlarma
-//                     break
-//                 case 2:
-//                     valorfijo = 42.50
-//                     cotizacion = M2 * valorfijo * factorAlarma
-//                     break
-//                 case 3:
-//                     valorfijo = 64.72
-//                     cotizacion = M2 * valorfijo * factorAlarma
-//                     break
-//                 case 4:
-//                     valorfijo = 70.20
-//                     cotizacion = M2 * valorfijo * factorAlarma
-//                     break
-//                 default:
-//                     console.warn("Ingrese un dato válido.")
-//                     return                    
-//             }
-//             alert("El costo mensual del seguro es de $ " + cotizacion.toFixed(2))
-//         }
-//     }
-// }
-
-// let estoycotizando = true
-// while (estoycotizando) {
-// iniciarCotizacion()
-// estoycotizando = confirm("¿Desea cotizar otro inmueble?")
-// }  
+function buscarProducto(codigo) {
+    let resultado = productos.find((producto) => producto.codigo === parseInt(codigo))
+    return resultado
+}
