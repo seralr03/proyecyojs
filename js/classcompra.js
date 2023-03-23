@@ -1,17 +1,3 @@
-/* ✅clase js - controlara el carrito con productos y manejara la confirmacion de la compra.
-   ✅ Mensaje inicial - reciclamos el que tenemos, lo hacemos mas simple.
-   ✅Creamos una funcion para buscar los productos que nos retorne el resultado - funiones de orden superior.
-   ✅Creamos una funcion para ver el contenido del carrito (solo a modo informativo para ver como queda)
-   ✅Creamos una funcion para finalizar la compra.
-    -debe validar que el carrito tenga productos. Si todo va bien.
-        -instanciamos la claseCompra{} pasandole el carrito como parametro.
-        -un metodo obtenersubtotal() - orden superoir reduce
-        -otro metodo confirmacionCompra(): confirmamos el pago y agradecemos.
-        -despues de cerrado el circuito de compra, vaciamos el carrito para que el usuario pueda iniciar la compra nuevamente.(parte del WordFlow)
-    Agrupamos todo lo anterior, en una sola funcion comprar().*/
-
-    
-
 class Compra {
     constructor(carrito) {
         this.carrito = carrito
