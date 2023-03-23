@@ -16,7 +16,7 @@ class Compra {
     constructor(carrito) {
         this.carrito = carrito
     }
-    obtenerSubtotal() { //le muestro al usuario lo que va comprando
+    obtenerSubtotal() { //le muestro al usuario lo que va comprando.. 
         if (this.carrito.length >0) {
             return this.carrito.reduce((_acc, _producto)=> _acc + productos.precio, 0)
         } else {
