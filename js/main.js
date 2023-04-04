@@ -1,25 +1,47 @@
-const mensajeInicial = "Selecciona el producto que deseas por su código."
-const carrito = []
+const mensajeInicial = "Selecciona el producto que deseas por su codigo."
+const contenedor = document.querySelector("div#contenedor")
 
-const productos = [{ codigo: 1, nombre: "Lemon Pie", imagen: "/img/lemon-pie.jpg", precio: 1800 },
-                   { codigo: 2, nombre: "Pan de Nuéz", imagen: "/img/pan-de-nuez.jpg", precio: 1000 },
-                   { codigo: 3, nombre: "Pasta Frola", imagen: "/img/pasta-frola.jpg", precio: 890 },
-                   { codigo: 4, nombre: "Risotto", imagen: "/img/risotto.jpg", precio: 1200 },
-                   { codigo: 5, nombre: "Tarta de Cebolla", imagen: "/img/tarta-de-cebolla.jpg", precio: 1400 },
-                   { codigo: 6, nombre: "Si a Todo", imagen: "/img/si-a-todo.jpg", precio: 1100 },
-                   { codigo: 7, nombre: "Tamos Ready", imagen: "/img/tamos-ready.jpg", precio: 850 },
-                   { codigo: 8, nombre: "Yendo", imagen: "/img/yendo.jpg", precio: 780 }]
+const productos = [{ codigo: 1, nombre: "Lemon Pie", imagen: "img/lemon-pie.jpeg", precio: 1800 },
+                   { codigo: 2, nombre: "Pan de Nuéz", imagen: "img/pan-de-nuez.jpeg", precio: 1000 },
+                   { codigo: 3, nombre: "Pasta Frola", imagen: "img/pasta-frola.jpeg", precio: 890 },
+                   { codigo: 4, nombre: "Risotto", imagen: "img/risotto.jpeg", precio: 1200 },
+                   { codigo: 5, nombre: "Tarta de Cebolla", imagen: "img/tarta-de-cebolla.jpeg", precio: 1400 },
+                   { codigo: 6, nombre: "Si a Todo", imagen: "img/si-a-todo.jpg", precio: 1100 },
+                   { codigo: 7, nombre: "Tamos Ready", imagen: "img/tamos-ready.jpg", precio: 850 },
+                   { codigo: 8, nombre: "Yendo", imagen: "img/yendo.jpg", precio: 780 }]
 
+// function cargarProductos() {
+//     if (productos.length > 0) {
+//         productos.forEach((producto)=> {
+//             contenedor.innerHTML += retornoTarjetaHTML (producto)
+//         })
+//     } else {
+//         console.warn ("Tenemos un problema, intenta de nuevo mas tarde.")
+//     }
 
+// }
+// cargarProductos()
+
+const cargarProductos = (producto) =>{
+    producto.forEach(producto => {
+        contenedor.innerHTML += retornoTarjetaHTML(producto)
+        
+    });
+}
+cargarProductos(productos)
 
 function buscarProducto(mensajeInicial) {
     let resultado = productos.find((producto) => producto.codigo === parseInt(mensajeInicial))
     return resultado
 }
+buscarProducto()
 
 function verCarrito() {
     console.table(carrito)
 }
+
+
+// no me muestra el importe de lo que compra 
 
 function finalizarCompra() {
     if (carrito.length > 0) {
@@ -35,6 +57,7 @@ function finalizarCompra() {
 
     }
 }
+finalizarCompra()
 
 
 function comprar() {
@@ -49,7 +72,7 @@ function comprar() {
     }
     let productoElegido = buscarProducto(codigo)
     if (productoElegido !== undefined) {
-        alert(`${productoElegido.imagen} El producto ${productoElegido.nombre} fue agregado al carrito.`)
+        alert(`El producto ${productoElegido.nombre} fue agregado al carrito.`)
         carrito.push(productoElegido)
         let respuesta = confirm("¿Deseas comprar otro producto?")
         if (respuesta) {
@@ -61,3 +84,4 @@ function comprar() {
     }
 
 }
+comprar()

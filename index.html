@@ -12,11 +12,12 @@
     <a href="pages/carrito.html"></a>
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/classcompra.js"></script>
+    <script defer src="js/templates.js"></script>
+    <script defer src="js/storage.js"></script>
     <script defer src="js/main.js"></script>
     <title>Mola Shopping</title>
 
     <!-- <a href="https://www.flaticon.es/iconos-gratis/supermercado" title="supermercado iconos">Supermercado iconos creados por juicy_fish - Flaticon</a> -->
-
 
 </head>
 
@@ -27,37 +28,28 @@
             <div class="container-fluid">
                 <h1 id="titulo">La Tienda de MOLA</h1>
                 <a class="navbar-brand" href="pages/carrito.html">
-                    <img src="img/carrito-de-compras.png" alt="Logo" width="60" height="60" class="d-inline-block">
+                    <img src="img/carrito-de-compras.png" alt="logo de carrito" width="60" height="60" class="d-inline-block">
                 </a>
+                <input type="text" class="form-control boton-buscador" placeholder="Buscar producto" aria-describedby="button-addon2">
             </div>
         </nav>
     </header>
 
     <main>
 
+        <h2 id="titulo2" class="text-center fs-1">Nuestros productos</h2>
+
         <section class="container rounded">
-            <h2 id="titulo2">Nuestros productos</h2>
-            <input type="search" id="inputSearch" placeholder="Ingresa el producto">
-            
-            <hr>
-            
-                <ul>
-                    <li>Lemon Pie</li>
-                    <li>Pan de Núez</li>
-                    <li>Pastafrola</li>
-                    <li>Rissoto</li>
-                    <li>Tarta de Cebolla</li>
-                    <li>Si a todo</li>
-                    <li>Tamos ready</li>
-                    <li>Yendo</li>
-                </ul>
-            </h3>
+
+            <div class="contenedor" id="contenedor"></div>
+
         </section>
 
-            
     </main>
 
-    <footer></footer>
+    <footer>
+
+    </footer>
 
 </body>
 
