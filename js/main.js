@@ -1,5 +1,6 @@
 const mensajeInicial = "Selecciona el producto que deseas por su codigo."
 const contenedor = document.querySelector("div#contenedor")
+const carrito = []
 
 const productos = [{ codigo: 1, nombre: "Lemon Pie", imagen: "img/lemon-pie.jpeg", precio: 1800 },
                    { codigo: 2, nombre: "Pan de Nuéz", imagen: "img/pan-de-nuez.jpeg", precio: 1000 },
@@ -22,12 +23,24 @@ const productos = [{ codigo: 1, nombre: "Lemon Pie", imagen: "img/lemon-pie.jpeg
 // }
 // cargarProductos()
 
-const cargarProductos = (producto) =>{
+const cargarProductos = (producto)=> {
     producto.forEach(producto => {
         contenedor.innerHTML += retornoTarjetaHTML(producto)
         
     });
 }
+
+const activarClickEnBotones = ()=> {
+    const btnComprar = document.querySelectorAll("boton btn btn-danger")
+        for (boton of btnComprar) {
+            boton.addEventListener("click", (e)=> {
+                console.log(e)
+            })
+
+        }   
+
+}
+activarClickEnBotones()
 cargarProductos(productos)
 
 function buscarProducto(mensajeInicial) {
