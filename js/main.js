@@ -21,10 +21,10 @@ const cargarProductos = (producto)=> {
 }
 
 const activarClickEnBotones = ()=> {
-    const btnComprar = document.querySelectorAll("boton btn btn-danger")
+    const btnComprar = document.querySelectorAll(".boton-agregar");
         for (boton of btnComprar) {
             boton.addEventListener("click", (e)=> {
-                // console.log(e.target.id)
+                console.log(e.target.id)
                 let resultado = productos.find(producto => producto.id === parseInt(e.target.id))
                 carrito.push(resultado)
             })

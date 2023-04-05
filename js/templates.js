@@ -8,7 +8,7 @@ const retornoTarjetaHTML = (producto) => {
                  <div class="card-body">
                    <h5 class="card-title">${producto.nombre}</h5>
                    <p class="card-text fw-semibold">$ ${producto.precio}</p>
-                   <button type="button" id="${producto.codigo}" class="boton btn btn-danger">Comprar</button>
+                   <button type="button" id="${producto.codigo}" class="boton-agregar btn btn-danger">Comprar</button>
                  </div>
                </div>
              </div>
@@ -20,6 +20,6 @@ const retornoTablaCheckOut = (producto) => {
                 <th scope="row">${producto.codigo}</th>
                 <td>${producto.nombre}</td>
                 <td>$ ${producto.precio}</td>
-                <td><button type="button" id="${producto.codigo} class="btn btn-danger btn-checkout">X</button></td>
+                <td><button type="button" id="${producto.codigo} class="btn btn-danger boton-eliminar">X</button></td>
             </tr>`
 }
