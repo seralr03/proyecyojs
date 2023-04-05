@@ -1,6 +1,5 @@
 const mensajeInicial = "Selecciona el producto que deseas por su codigo."
 const contenedor = document.querySelector("div#contenedor")
-const carrito = []
 const inputSearch = document.querySelector("input#form-control boton-buscador")
 
 const productos = [{ id: 1, nombre: "Lemon Pie", imagen: "img/lemon-pie.jpeg", precio: 1800 },
@@ -12,17 +11,6 @@ const productos = [{ id: 1, nombre: "Lemon Pie", imagen: "img/lemon-pie.jpeg", p
                    { id: 7, nombre: "Tamos Ready", imagen: "img/tamos-ready.jpg", precio: 850 },
                    { id: 8, nombre: "Yendo", imagen: "img/yendo.jpg", precio: 780 }]
 
-// function cargarProductos() {
-//     if (productos.length > 0) {
-//         productos.forEach((producto)=> {
-//             contenedor.innerHTML += retornoTarjetaHTML (producto)
-//         })
-//     } else {
-//         console.warn ("Tenemos un problema, intenta de nuevo mas tarde.")
-//     }
-
-// }
-// cargarProductos()
 
 const cargarProductos = (producto)=> {
     producto.forEach(producto => {
