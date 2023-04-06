@@ -24,7 +24,7 @@ const activarClickEnBotones = ()=> {
         for (boton of btnComprar) {
             boton.addEventListener("click", (e)=> {
                 console.log(e.target.id)
-                let resultado = productos.find((producto) => producto.id === parseInt(e.target.id))
+                let resultado = productos.find(producto => producto.id === parseInt(e.target.id))
                 carrito.push(resultado)
                 console.log(carrito)
             })
