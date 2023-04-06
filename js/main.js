@@ -1,4 +1,4 @@
-const contenedor = document.querySelector("#contenedor")
+const contenedor = document.querySelector("div#contenedor")
 const inputSearch = document.querySelector("input#form-control boton-buscador")
 
 const productos = [{ id: 1, nombre: "Lemon Pie", imagen: "img/lemon-pie.jpeg", precio: 1800 },
