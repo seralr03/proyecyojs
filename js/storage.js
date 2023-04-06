@@ -10,7 +10,6 @@ const guardarCarrito = ()=> {
 const recuperarCarrito = ()=> {
     const carritoAlmacenado = JSON.parse(localStorage.getItem("carritoProductos"))
     if (carritoAlmacenado !== null) {
-        carrito.push(...carritoAlmacenado)
-      
+        carrito.push(...carritoAlmacenado)      
         }
     }
