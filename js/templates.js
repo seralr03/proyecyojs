@@ -8,7 +8,7 @@ const retornoTarjetaHTML = (producto) => {
                  <div class="card-body">
                    <h5 class="card-title">${producto.nombre}</h5>
                    <p class="card-text fw-semibold">$ ${producto.precio}</p>
-                   <button type="button" id="${producto.codigo}" class="boton-agregar btn btn-danger">Comprar</button>
+                   <button type="button" id="${producto.id}" class="boton-agregar btn btn-danger">Comprar</button>
                  </div>
                </div>
              </div>

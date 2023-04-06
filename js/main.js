@@ -27,6 +27,7 @@ const activarClickEnBotones = ()=> {
                 console.log(e.target.id)
                 let resultado = productos.find(producto => producto.id === parseInt(e.target.id))
                 carrito.push(resultado)
+                console.log("Se agrego al carrito")
             })
 
         }   
