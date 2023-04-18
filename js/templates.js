@@ -15,6 +15,7 @@ const retornoTarjetaHTML = (producto) => {
            </div>`
 }
 
+
 const retornoTablaCheckOut = (producto) => {
     return  `<tr>
                 <th scope="row">${producto.codigo}</th>

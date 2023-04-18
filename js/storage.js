@@ -1,15 +1,8 @@
-const carrito = []
+const carrito = recuperarCarrito() || []
 
-const guardarCarrito = ()=> {
-    if (carrito.length > 0) {
-        localStorage.setItem("carritoProductos", JSON.stringify(carrito))
-    }
+function recuperarCarrito() {
+    return JSON.parse(localStorage.getItem("carritoProductos"))
 
 }
 
-const recuperarCarrito = ()=> {
-    const carritoAlmacenado = JSON.parse(localStorage.getItem("carritoProductos"))
-    if (carritoAlmacenado !== null) {
-        carrito.push(...carritoAlmacenado)      
-        }
-    }
+recuperarCarrito()

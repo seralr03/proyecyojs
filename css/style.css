@@ -46,3 +46,26 @@ h2{
     justify-content: center;
     flex-wrap: wrap;
 }
+
+footer {
+    background-color: #EFC36A;
+    text-align: center;
+}
+
+a i:hover {
+    border: 2px solid;
+    border-radius: 10px;
+    font-size: 30px;
+    color: black;
+    padding: 5px;
+    transition: 0.2s;
+}
+
+li a:hover {
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    transition: 0.3s;
+  }

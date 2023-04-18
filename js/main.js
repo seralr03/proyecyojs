@@ -11,6 +11,7 @@ const productos = [{ id: 1, nombre: "Lemon Pie", imagen: "img/lemon-pie.jpeg", p
                    { id: 8, nombre: "Yendo", imagen: "img/yendo.jpg", precio: 780 }]
 
 
+                   
 const cargarProductos = (producto)=> {
     producto.forEach(producto => {
         contenedor.innerHTML += retornoTarjetaHTML(producto)
@@ -18,30 +19,30 @@ const cargarProductos = (producto)=> {
     });
     activarClickEnBotones()
 }
+cargarProductos(productos)
 
-const activarClickEnBotones = ()=> {
-    const btnComprar = document.querySelectorAll(".boton-agregar");
-        for (boton of btnComprar) {
+function activarClickEnBotones() {
+    const buttons = document.querySelectorAll("button");
+        for (boton of buttons) {
             boton.addEventListener("click", (e)=> {
-                console.log(e.target.id)
-                let resultado = productos.find(producto => producto.id === parseInt(e.target.id))
-                carrito.push(resultado)
-                console.log(carrito)
+                agregarAlCarrito(e.target.id)
+                guardarCarrito(carrito)
             })
 
         }   
 
 }
 
-cargarProductos(productos)
-recuperarCarrito()
-
-function buscarProducto(mensajeInicial) {
-    let resultado = productos.find((producto) => producto.id === parseInt(mensajeInicial))
-    return resultado
+function agregarAlCarrito(id) {
+    let resultado = productos.find(producto => producto.id === parseInt(id))
+    if (resultado !== undefined) {
+        carrito.push(resultado)
+        guardarCarrito(carrito)
+    }
 }
-buscarProducto()
 
-function verCarrito() {
-    console.table(carrito)
+function guardarCarrito(carrito) {
+    if (carrito.lenght > 0) {
+        localStorage.setItem("carritoproductos"), JSON.stringify(productos)
+    }
 }
