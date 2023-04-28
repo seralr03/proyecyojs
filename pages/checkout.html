@@ -15,6 +15,7 @@
     <script defer src="../js/templates.js"></script>
     <script defer src="../js/storage.js"></script>
     <script defer src="../js/main.js"></script>
+    <script src="../js/checkout.js"></script>
     <title>Mola Shopping / Carrito</title>
 
 </head>
@@ -24,7 +25,7 @@
         <nav class="navbar bg-body-tertiary justify-content-sapce-between">
             <div class="container-fluid">
                 <h1 id="titulo">Tu carrito</h1>
-                <a class="navbar-brand" href="./carrito.html">
+                <a class="navbar-brand" href="./checkout.html">
                     <img src="../img/carrito-de-compras.png" alt="Logo" width="60" height="60" class="d-inline-block">
                 </a>
                 <input type="text" class="form-control boton-buscador" placeholder="Buscar producto"
@@ -34,26 +35,29 @@
     </header>
     <main>
 
-        <div class="d-grid gap-2 m-4 text-center">
-           <a href="../index.html"><button class="btn btn-outline-danger btn-lg">Seguir comprando</button></a>
+        <div class="gap-2 m-4 text-center">
+            <a href="../index.html"><button class="btn btn-outline-danger btn-lg">Seguir comprando</button></a>
         </div>
-        
+
 
         <section class="container">
 
-            <div class="checkout" id="checkout">
+            <div class="container" id="checkout">
 
                 <table class="table">
                     <thead class="table-danger border-3">
                         <tr>
-                            <th scope="col">Codigo</th>
                             <th scope="col">Producto</th>
                             <th scope="col">Precio</th>
                             <th scope="col">Quitar</th>
                         </tr>
                     </thead>
                     <tbody>
-
+                        <!-- <tr>
+                            <td>Nombre del producto</td>
+                            <td>$ 1234</td>
+                            <td><button id="">🗑</button></td>
+                        </tr> -->
                     </tbody>
                 </table>
 
@@ -61,9 +65,13 @@
 
         </section>
 
-        <div class="d-grid gap-2 m-4 text-center">
+        <div class="gap-2 m-2 text-center">
+            <p>Importe total:</p>
+        </div>
+
+        <div class="gap-2 m-4 text-center">
             <a href="../index.html"><button class="btn btn-outline-danger btn-lg">Finalizar Compra</button></a>
-         </div>
+        </div>
 
 
     </main>

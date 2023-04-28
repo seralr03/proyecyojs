@@ -10,10 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Noto+Sans+JP:wght@500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <a href="./pages/carrito.html"></a>
+    <a href="./pages/checkout.html"></a>
     <link rel="stylesheet" href="css/style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="./js/templates.js"></script>
+    <script defer src="./js/checkout.js"></script>
     <script defer src="./js/storage.js"></script>
     <script defer src="./js/main.js"></script>
     <title>Mola Shopping</title>
@@ -28,11 +29,11 @@
         <nav class="navbar bg-body-tertiary justify-content-sapce-between">
             <div class="container-fluid">
                 <h1 id="titulo">La Tienda de MOLA</h1>
-                <a class="navbar-brand" href="pages/carrito.html">
+                <a class="navbar-brand" href="pages/checkout.html">
                     <img src="img/carrito-de-compras.png" alt="logo de carrito" width="60" height="60"
                         class="d-inline-block">
                 </a>
-                <input type="text" class="form-control boton-buscador" placeholder="Buscar producto"
+                <input type="search" id="inputSearch" class="form-control boton-buscador" placeholder="Buscar producto"
                     aria-describedby="button-addon2">
             </div>
         </nav>

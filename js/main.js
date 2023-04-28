@@ -23,13 +23,13 @@ cargarProductos(productos)
 
 function activarClickEnBotones() {
     const buttons = document.querySelectorAll("button");
-        for (boton of buttons) {
-            boton.addEventListener("click", (e)=> {
+        for (buton of buttons) {
+            buton.addEventListener("click", (e)=> {
                 agregarAlCarrito(e.target.id)
                 guardarCarrito(carrito)
             })
 
-        }   
+        }
 
 }
 
@@ -37,6 +37,7 @@ function agregarAlCarrito(id) {
     let resultado = productos.find(producto => producto.id === parseInt(id))
     if (resultado !== undefined) {
         carrito.push(resultado)
+        alerta()
         guardarCarrito(carrito)
     }
 }
@@ -45,4 +46,26 @@ function guardarCarrito(carrito) {
     if (carrito.lenght > 0) {
         localStorage.setItem("carritoproductos"), JSON.stringify(productos)
     }
+}
+
+function alerta () {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: false,
+        background: "#4e4e4d",
+        iconColor: "red",
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        color: "red",
+        title: 'SE AGREGO AL CARRITO'
+      })
 }

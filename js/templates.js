@@ -1,3 +1,4 @@
+
 const retornoTarjetaHTML = (producto) => {
     return `<div class="card mb-3" style="max-width: 500px;">
              <div class="row g-0">
@@ -18,9 +19,12 @@ const retornoTarjetaHTML = (producto) => {
 
 const retornoTablaCheckOut = (producto) => {
     return  `<tr>
-                <th scope="row">${producto.codigo}</th>
                 <td>${producto.nombre}</td>
                 <td>$ ${producto.precio}</td>
                 <td><button type="button" id="${producto.codigo} class="btn btn-danger boton-eliminar">X</button></td>
             </tr>`
+}
+
+function guardarCarrito() {
+      localStorage.setItem("carritoProductos", JSON.stringify(productos))
 }
