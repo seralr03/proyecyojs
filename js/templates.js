@@ -21,10 +21,6 @@ const retornoTablaCheckOut = (producto) => {
     return  `<tr>
                 <td>${producto.nombre}</td>
                 <td>$ ${producto.precio}</td>
-                <td><button type="button" id="${producto.codigo} class="btn btn-danger boton-eliminar">X</button></td>
+                <td><button type="button" id="${producto.codigo} class="btn btn-danger botonEliminar">Eliminar</button></td>
             </tr>`
-}
-
-function guardarCarrito() {
-      localStorage.setItem("carritoProductos", JSON.stringify(productos))
 }

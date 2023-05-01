@@ -15,7 +15,7 @@
     <script defer src="../js/templates.js"></script>
     <script defer src="../js/storage.js"></script>
     <script defer src="../js/main.js"></script>
-    <script src="../js/checkout.js"></script>
+    <script defer src="../js/checkout.js"></script>
     <title>Mola Shopping / Carrito</title>
 
 </head>
@@ -56,7 +56,7 @@
                         <!-- <tr>
                             <td>Nombre del producto</td>
                             <td>$ 1234</td>
-                            <td><button id="">🗑</button></td>
+                            <td><button type="button" class="btn btn-danger botonEliminar">Eliminar</button></td>
                         </tr> -->
                     </tbody>
                 </table>
@@ -66,11 +66,11 @@
         </section>
 
         <div class="gap-2 m-2 text-center">
-            <p>Importe total:</p>
+            <p>Importe total: <span id="importeTotal">$ 0</span></p>
         </div>
 
         <div class="gap-2 m-4 text-center">
-            <a href="../index.html"><button class="btn btn-outline-danger btn-lg">Finalizar Compra</button></a>
+            <button class="btn btn-danger finalizarCompra">Finalizar compra</button>
         </div>
 
 

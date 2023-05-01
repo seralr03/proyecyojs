@@ -1,15 +1,18 @@
-const contenedor = document.querySelector("div#contenedor")
-const inputSearch = document.querySelector("input#form-control boton-buscador")
+const contenedor = document.querySelector("#contenedor")
+const inputSearch = document.querySelector("input#inputSearch")
+const productos = []
+const urlProductos = `js/productos.json`
 
-const productos = [{ id: 1, nombre: "Lemon Pie", imagen: "img/lemon-pie.jpeg", precio: 1800 },
-                   { id: 2, nombre: "Pan de Nuéz", imagen: "img/pan-de-nuez.jpeg", precio: 1000 },
-                   { id: 3, nombre: "Pasta Frola", imagen: "img/pasta-frola.jpeg", precio: 890 },
-                   { id: 4, nombre: "Risotto", imagen: "img/risotto.jpeg", precio: 1200 },
-                   { id: 5, nombre: "Tarta de Cebolla", imagen: "img/tarta-de-cebolla.jpeg", precio: 1400 },
-                   { id: 6, nombre: "Si a Todo", imagen: "img/si-a-todo.jpg", precio: 1100 },
-                   { id: 7, nombre: "Tamos Ready", imagen: "img/tamos-ready.jpg", precio: 850 },
-                   { id: 8, nombre: "Yendo", imagen: "img/yendo.jpg", precio: 780 }]
 
+const obtenerProductos = () => {
+    fetch(urlProductos)
+        .then((response)=> response.json() )
+        .then((data)=> productos.push(...data) )
+        .then(()=> cargarProductos(productos) )
+        .catch(error => {
+            console.error(error)            
+        })
+}
 
                    
 const cargarProductos = (producto)=> {
@@ -19,12 +22,14 @@ const cargarProductos = (producto)=> {
     });
     activarClickEnBotones()
 }
-cargarProductos(productos)
+obtenerProductos()
+
+
 
 function activarClickEnBotones() {
-    const buttons = document.querySelectorAll("button");
-        for (buton of buttons) {
-            buton.addEventListener("click", (e)=> {
+    const bontones = document.querySelectorAll("button");
+        for (boton of bontones) {
+            boton.addEventListener("click", (e)=> {
                 agregarAlCarrito(e.target.id)
                 guardarCarrito(carrito)
             })
