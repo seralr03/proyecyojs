@@ -1,5 +1,4 @@
 const tbody = document.querySelector("tbody")
-const carrito = recuperarCarrito() || []
 const finalizarCompra = document.querySelector("div.finalizarCompra")
 
 function cargarCarrito() {
@@ -24,12 +23,6 @@ function activarClickEnBotonesEliminar() {
         }
     }
 }
-
-function recuperarCarrito() {
-    return JSON.parse(localStorage.getItem("carritoProductos"))
-
-}
-recuperarCarrito()
 
 function totalDeLaCompra() {
     return carrito.reduce((acc, productos)=> acc + productos.precio, 0)

@@ -46,12 +46,7 @@ function agregarAlCarrito(id) {
         guardarCarrito(carrito)
     }
 }
-
-function guardarCarrito(carrito) {
-    if (carrito.lenght > 0) {
-        localStorage.setItem("carritoproductos"), JSON.stringify(productos)
-    }
-}
+s
 
 function alerta () {
     const Toast = Swal.mixin({
